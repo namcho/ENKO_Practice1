@@ -2,10 +2,10 @@
 1600863884 source:d:\projects\wxwidgets\enko_practice1\homoabstract.c
 	"HomoAbstract.h"
 
-1600863708 d:\projects\wxwidgets\enko_practice1\homoabstract.h
+1600878798 d:\projects\wxwidgets\enko_practice1\homoabstract.h
 	<stdint.h>
 
-1600863754 source:d:\projects\wxwidgets\enko_practice1\main.c
+1600879554 source:d:\projects\wxwidgets\enko_practice1\main.c
 	<stdio.h>
 	<stdlib.h>
 	"HomoSapiens.h"
