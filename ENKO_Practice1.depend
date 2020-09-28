@@ -2,15 +2,15 @@
 1600863884 source:d:\projects\wxwidgets\enko_practice1\homoabstract.c
 	"HomoAbstract.h"
 
-1600878798 d:\projects\wxwidgets\enko_practice1\homoabstract.h
+1600947161 d:\projects\wxwidgets\enko_practice1\homoabstract.h
 	<stdint.h>
 
-1600879554 source:d:\projects\wxwidgets\enko_practice1\main.c
+1601021365 source:d:\projects\wxwidgets\enko_practice1\main.c
 	<stdio.h>
 	<stdlib.h>
 	"HomoSapiens.h"
 
-1600860847 d:\projects\wxwidgets\enko_practice1\homosapiens.h
+1600947124 d:\projects\wxwidgets\enko_practice1\homosapiens.h
 	"HomoAbstract.h"
 
 1600863654 source:d:\projects\wxwidgets\enko_practice1\homosapiens.c

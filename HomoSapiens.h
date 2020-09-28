@@ -1,5 +1,7 @@
 #include "HomoAbstract.h"
 
+// Kitap okuma, TV izleme,
+
 typedef enum{
     LANGUAGE_NONE = 0,
     LANGUAGE_TR,
@@ -25,3 +27,4 @@ void setHomoSapiensLanguage(HomoSapiens_t *PersonObj, HomoSapiens_Language_e LAN
 char *getHomoSapiensName(HomoSapiens_t *PersonObj);
 
 char *getHomoSapiensSurname(HomoSapiens_t *PersonObj);
+

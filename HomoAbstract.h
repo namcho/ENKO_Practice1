@@ -18,11 +18,15 @@ typedef char *(*ISound)(char *question);
 /// 15dk boyunca bir yandan yemek yeniyor, ardindan da arada bir su iciliyor olabilir... HATTA film izleme aksiyon pause yapilarak calan kapiya ya da telefona
 /// bakilip telefon aksiyon bittikten sonra film resume ile devam ettiriliyor olabilir...
 
+///     Yemek yeme tum canlilarin ortak ozelligi... Bu arayuz fonksiyonu eklenebilir...
 typedef struct{
 
     uint16_t weight;
     uint16_t height;
     ISound SoundFunc;
+
+    // Her bir turun resmini ekrana basaak
+    // arayuz fonksiyonu eklensin
 
 }HomoAbstract_t;
 
