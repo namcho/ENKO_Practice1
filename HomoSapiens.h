@@ -1,3 +1,6 @@
+#ifndef _HOMOSAPIENS_H_
+#define _HOMOSAPIENS_H_
+
 #include "HomoAbstract.h"
 
 // Kitap okuma, TV izleme,
@@ -17,6 +20,7 @@ typedef struct{
 
 }HomoSapiens_t;
 
+void initHomoSapiens(HomoSapiens_t *PersonObj);
 
 void setHomoSapiensName(HomoSapiens_t *PersonObj, char *name);
 
@@ -28,3 +32,4 @@ char *getHomoSapiensName(HomoSapiens_t *PersonObj);
 
 char *getHomoSapiensSurname(HomoSapiens_t *PersonObj);
 
+#endif //_HOMOSAPIENS_H_

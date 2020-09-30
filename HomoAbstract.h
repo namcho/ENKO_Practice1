@@ -1,13 +1,3 @@
-#include <stdint.h>
-
-
-/// Her turlu sesi kapsar, maymun, yunus, at, balina vs... bizlerin cikardigi bize gore normal anlasilabilir olanlar
-/// Bu fonksiyon dogal frekansi ve genligi olan sese donusturmeye yapayan bir fonksiyon olabilirdi...
-
-/// Bu islemi yapabilmemiz icin bir donanima ihtiyacimiz var, donanim'da surekli degisebilecegi icin, bir arayuz fonksiyonu
-/// kullanmak dogru bir yaklasim olur.
-typedef char *(*ISound)(char *question);
-
 ///     Action() arayuz fonksiyonu eklensin, yemek, film izleme kitap okuma, vs... gibi eylemler icin
 /// yazilacak olan aksiyonlarida STATE-MACHINE kullanarak tasarlayalim. Ornegin yemek yerken lokmanin bitmesini beklemek bu sirada
 /// TV izliyor olmak vs...
@@ -19,22 +9,61 @@ typedef char *(*ISound)(char *question);
 /// bakilip telefon aksiyon bittikten sonra film resume ile devam ettiriliyor olabilir...
 
 ///     Yemek yeme tum canlilarin ortak ozelligi... Bu arayuz fonksiyonu eklenebilir...
+
+#ifndef _HOMOABSTRACT_H_
+#define _HOMOABSTRACT_H_
+
+#include <stdint.h>
+
+/// Her turlu sesi kapsar, maymun, yunus, at, balina vs... bizlerin cikardigi bize gore normal anlasilabilir olanlar
+/// Bu fonksiyon dogal frekansi ve genligi olan sese donusturmeye yapayan bir fonksiyon olabilirdi...
+
+/// Bu islemi yapabilmemiz icin bir donanima ihtiyacimiz var, donanim'da surekli degisebilecegi icin, bir arayuz fonksiyonu
+/// kullanmak dogru bir yaklasim olur.
+typedef char *(*ISound)(char *question);
+
+typedef void (*IPictureOfHomo)(void);
+
+typedef enum{
+
+    HEIGHT_UNIT_CM = 0,
+    HEIGHT_UNIT_METER,
+    HEIGHT_UNIT_MMETER,
+
+}HomoHeightUnit_e;
+
+typedef float height_t;
+typedef float weight_t;
+
 typedef struct{
 
-    uint16_t weight;
-    uint16_t height;
+    weight_t weight;
+    height_t height;
     ISound SoundFunc;
 
+    HomoHeightUnit_e HeightUnit;
     // Her bir turun resmini ekrana basaak
     // arayuz fonksiyonu eklensin
+
+    IPictureOfHomo pictureFunc;
 
 }HomoAbstract_t;
 
 
-void setHomoWeight(HomoAbstract_t *HomoObj, uint16_t weight);
+void setHomoWeight(HomoAbstract_t *HomoObj, weight_t weight);
 
-void setHomoHeight(HomoAbstract_t *HomoObj, uint16_t height);
+void setHomoHeight(HomoAbstract_t *HomoObj, height_t height);
+
+height_t getHomoHeight(HomoAbstract_t *HomoObj);
 
 void setHomoSound(HomoAbstract_t *HomoObj, ISound soundFunc);
 
+void setHomoHeightUnit(HomoAbstract_t *HomoObj, HomoHeightUnit_e HEIGHT_UNIT_x);
+
 ISound getHomoSound(HomoAbstract_t *HomoObj);
+
+HomoHeightUnit_e getHomoHeightUnit(HomoAbstract_t *HomoObj);
+
+IPictureOfHomo getHomoPicture(HomoAbstract_t *HomoObj);
+
+#endif // _HOMOABSTRACT_H_

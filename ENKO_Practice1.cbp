@@ -31,6 +31,19 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="HomoAbstract.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="HomoAbstract.h" />
+		<Unit filename="HomoErectus.h" />
+		<Unit filename="HomoHabilis.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="HomoHabilis.h" />
+		<Unit filename="HomoSapiens.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="HomoSapiens.h" />
 		<Unit filename="main.c">
 			<Option compilerVar="CC" />
 		</Unit>

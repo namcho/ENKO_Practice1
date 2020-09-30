@@ -7,6 +7,16 @@ static char *LanguageNull(char *question);
 static char *LanguageTurkish(char *question);
 static char *LanguageEnglish(char *question);
 
+static void pictureOfSapiens();
+
+void initHomoSapiens(HomoSapiens_t *PersonObj){
+
+    PersonObj->name[0] = '\0';
+    PersonObj->surname[0] = '\0';
+
+    PersonObj->HomoBase.pictureFunc = pictureOfSapiens;
+}
+
 void setHomoSapiensName(HomoSapiens_t *PersonObj, char *name){
 
     uint16_t name_len;
@@ -73,30 +83,16 @@ char *LanguageTurkish(char *question){
     static char answer[20];
 
     if(strcmp(question, "Merhaba") == 0){
-        answer[0] = 'S';
-        answer[1] = 'e';
-        answer[2] = 'l';
-        answer[3] = 'a';
-        answer[4] = 'm';
+
+        strcpy(answer, "Selamlar");
     }
     else if(strcmp(question, "Nasilsin") == 0){
-        answer[0] = 'i';
-        answer[1] = 'y';
-        answer[2] = 'i';
-        answer[3] = 'y';
-        answer[4] = 'i';
-        answer[5] = 'm';
+
+        strcpy(answer, "iyiyim");
     }
     else{
-        answer[0] = 'A';
-        answer[1] = 'n';
-        answer[2] = 'l';
-        answer[3] = 'm';
-        answer[4] = 'a';
-        answer[5] = 'd';
-        answer[6] = 'i';
-        answer[7] = 'm';
 
+        strcpy(answer, "Anlamadim");
     }
 
     return answer;
@@ -107,26 +103,15 @@ char *LanguageEnglish(char *question){
     static char answer[20];
 
     if(strcmp(question, "Hello") == 0){
-        answer[0] = 'H';
-        answer[1] = 'e';
-        answer[2] = 'l';
-        answer[3] = 'l';
-        answer[4] = 'l';
-        answer[5] = 'o';
+        strcpy(answer, "Hellllo");
     }
     else if(strcmp(question, "What's up") == 0){
-        answer[0] = 'F';
-        answer[1] = 'i';
-        answer[2] = 'n';
-        answer[3] = 'e';
-        answer[4] = '\0';
+
+        strcpy(answer, "Fine");
     }
     else{
-        answer[0] = 'E';
-        answer[1] = 'r';
-        answer[2] = 'r';
-        answer[3] = 'o';
-        answer[4] = 'r';
+
+        strcpy(answer, "Error");
     }
 
     return answer;
@@ -135,4 +120,9 @@ char *LanguageEnglish(char *question){
 char *LanguageNull(char *question){
 
     return NULL;
+}
+
+void pictureOfSapiens(){
+
+    printf("I'm sapiens!\n");
 }
