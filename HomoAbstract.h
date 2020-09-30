@@ -15,6 +15,8 @@
 
 #include <stdint.h>
 
+struct HomoAbstract_st;
+
 /// Her turlu sesi kapsar, maymun, yunus, at, balina vs... bizlerin cikardigi bize gore normal anlasilabilir olanlar
 /// Bu fonksiyon dogal frekansi ve genligi olan sese donusturmeye yapayan bir fonksiyon olabilirdi...
 
@@ -23,6 +25,8 @@
 typedef char *(*ISound)(char *question);
 
 typedef void (*IPictureOfHomo)(void);
+
+typedef void (*ICallbackHeightWeight)(struct HomoAbstract_st *HomoObj);
 
 typedef enum{
 
@@ -35,7 +39,7 @@ typedef enum{
 typedef float height_t;
 typedef float weight_t;
 
-typedef struct{
+typedef struct HomoAbstract_st{
 
     weight_t weight;
     height_t height;
@@ -47,10 +51,13 @@ typedef struct{
 
     IPictureOfHomo pictureFunc;
 
+    ICallbackHeightWeight callback;
 }HomoAbstract_t;
 
 
 void setHomoWeight(HomoAbstract_t *HomoObj, weight_t weight);
+
+weight_t getHomoWeight(HomoAbstract_t *HomoObj);
 
 void setHomoHeight(HomoAbstract_t *HomoObj, height_t height);
 
@@ -65,5 +72,6 @@ ISound getHomoSound(HomoAbstract_t *HomoObj);
 HomoHeightUnit_e getHomoHeightUnit(HomoAbstract_t *HomoObj);
 
 IPictureOfHomo getHomoPicture(HomoAbstract_t *HomoObj);
+
 
 #endif // _HOMOABSTRACT_H_

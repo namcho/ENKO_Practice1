@@ -1,14 +1,27 @@
 
 #include "HomoAbstract.h"
+#include <stdio.h>
+
+// C++ Style Protected functions
+void Callback_HomoAbstract(HomoAbstract_t *HomoObj);
 
 void setHomoWeight(HomoAbstract_t *HomoObj, weight_t weight){
 
     HomoObj->weight = weight;
+
+    HomoObj->callback(HomoObj);
+}
+
+weight_t getHomoWeight(HomoAbstract_t *HomoObj){
+
+    return HomoObj->weight;
 }
 
 void setHomoHeight(HomoAbstract_t *HomoObj, height_t height){
 
     HomoObj->height = height;
+
+    HomoObj->callback(HomoObj);
 }
 
 height_t getHomoHeight(HomoAbstract_t *HomoObj){
@@ -54,4 +67,15 @@ HomoHeightUnit_e getHomoHeightUnit(HomoAbstract_t *HomoObj){
 IPictureOfHomo getHomoPicture(HomoAbstract_t *HomoObj){
 
     return HomoObj->pictureFunc;
+}
+
+
+// Protected implementations
+void Callback_HomoAbstract(HomoAbstract_t *HomoObj){
+
+    float mul;
+
+    mul = getHomoHeight(HomoObj) * getHomoWeight(HomoObj);
+
+    printf("Height x Weight = %.2f\n", mul);
 }

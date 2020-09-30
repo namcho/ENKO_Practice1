@@ -1,24 +1,26 @@
 # depslib dependency file v1.0
-1601466668 source:d:\projects\wxwidgets\enko_practice1\homoabstract.c
+1601469291 source:d:\projects\wxwidgets\enko_practice1\homoabstract.c
 	"HomoAbstract.h"
+	<stdio.h>
 
-1601467516 d:\projects\wxwidgets\enko_practice1\homoabstract.h
+1601469507 d:\projects\wxwidgets\enko_practice1\homoabstract.h
 	<stdint.h>
 
-1601461621 source:d:\projects\wxwidgets\enko_practice1\main.c
+1601467603 source:d:\projects\wxwidgets\enko_practice1\main.c
 	<stdio.h>
 	<stdlib.h>
 	"HomoSapiens.h"
+	"HomoHabilis.h"
 
 1601467573 d:\projects\wxwidgets\enko_practice1\homosapiens.h
 	"HomoAbstract.h"
 
-1601466596 source:d:\projects\wxwidgets\enko_practice1\homosapiens.c
+1601469453 source:d:\projects\wxwidgets\enko_practice1\homosapiens.c
 	"HomoSapiens.h"
 	<stdio.h>
 	<string.h>
 
-1601467054 source:d:\projects\wxwidgets\enko_practice1\homohabilis.c
+1601469365 source:d:\projects\wxwidgets\enko_practice1\homohabilis.c
 	"HomoHabilis.h"
 	<stdio.h>
 

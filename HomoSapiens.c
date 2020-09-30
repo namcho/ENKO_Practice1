@@ -2,6 +2,9 @@
 #include <stdio.h>
 #include <string.h>
 
+// Protected functions from HomoAbstract
+extern void Callback_HomoAbstract(HomoAbstract_t *HomoObj);
+
 // Private functions
 static char *LanguageNull(char *question);
 static char *LanguageTurkish(char *question);
@@ -14,7 +17,12 @@ void initHomoSapiens(HomoSapiens_t *PersonObj){
     PersonObj->name[0] = '\0';
     PersonObj->surname[0] = '\0';
 
+    PersonObj->HomoBase.height = 0;
+    PersonObj->HomoBase.weight = 0;
+
     PersonObj->HomoBase.pictureFunc = pictureOfSapiens;
+
+    PersonObj->HomoBase.callback = Callback_HomoAbstract;
 }
 
 void setHomoSapiensName(HomoSapiens_t *PersonObj, char *name){
@@ -24,14 +32,10 @@ void setHomoSapiensName(HomoSapiens_t *PersonObj, char *name){
 
     name_len = strlen(name);
 
-    printf("sizeof = %d\n", name_len);
     for(i = 0; i < name_len; i++){
 
         PersonObj->name[i] = name[i];
-        printf("%c", name [i]);
     }
-
-    printf("\n");
 }
 
 void setHomoSapiensSurname(HomoSapiens_t *PersonObj, char *surname){
