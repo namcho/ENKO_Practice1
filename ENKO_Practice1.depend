@@ -1,9 +1,9 @@
 # depslib dependency file v1.0
-1601469291 source:d:\projects\wxwidgets\enko_practice1\homoabstract.c
+1601469623 source:d:\projects\wxwidgets\enko_practice1\homoabstract.c
 	"HomoAbstract.h"
 	<stdio.h>
 
-1601469507 d:\projects\wxwidgets\enko_practice1\homoabstract.h
+1601470708 d:\projects\wxwidgets\enko_practice1\homoabstract.h
 	<stdint.h>
 
 1601467603 source:d:\projects\wxwidgets\enko_practice1\main.c
