@@ -11,7 +11,9 @@ HomoSapiens_t MehmetObj;
 HomoSapiens_t JohnObj;
 HomoSapiens_t PtolemyObj;
 HomoSapiens_t FaradayObj;
+
 HomoSapiens_t LeibnizObj;
+Activity_t ActivityLeibnizObj;
 
 HomoHabilis_t Habilis1Obj;
 Activity_t ActivityHabilisObj;
@@ -108,9 +110,22 @@ int main()
     setActivityAdapterHunting(&ActivityHabilisObj);
     setHomoActivity(&Habilis1Obj.HomoBase, &ActivityHabilisObj);
 
+    initHomoSapiens(&LeibnizObj);
+    setHomoSapiensName(&LeibnizObj, "GottFried");
+    setHomoSapiensSurname(&FaradayObj, "Leibniz");
+    setHomoSapiensLanguage(&LeibnizObj, LANGUAGE_ENG);
+    setHomoSapiens_CallbackHeight(&LeibnizObj);
+    setHomoHeight(&LeibnizObj.HomoBase, 194);
+    setHomoHeightUnit(&LeibnizObj.HomoBase, HEIGHT_UNIT_MMETER);
+    setHomoWeight(&LeibnizObj.HomoBase, 87);
+
+    setActivityAdapterReading(&ActivityLeibnizObj);
+    setHomoActivity(&LeibnizObj.HomoBase, &ActivityLeibnizObj);
+
     for(uint16_t i = 0; i < 10; i++){
 
         runHomoActivity(&Habilis1Obj.HomoBase, NULL);
+        runHomoActivity(&LeibnizObj.HomoBase, NULL);
     }
 
     return 0;
