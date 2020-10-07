@@ -12,6 +12,10 @@ typedef struct{
 
 }HomoHabilis_t;
 
+/*
+* @brief HomoHabilis nesnesinin ilk ayarlarini yapar
+* @param HabilisObj Habilis nesnesini belirtir
+*/
 
 void initHomoHabilis(HomoHabilis_t *HabilisObj);
 

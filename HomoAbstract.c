@@ -5,6 +5,41 @@
 // C++ Style Protected functions
 void Callback_mulHeightWeight(void *obj);
 
+
+
+void runHomoActivity(HomoAbstract_t *HomoObj, void *arg){
+
+    ActivityStatus_e status;
+    if(getActivityState(HomoObj->ActivityObj) == ACTIVITY_STATE_PRE){
+
+            status = HomoObj->ActivityObj->preActivityFunc(HomoObj->ActivityObj, arg);
+
+            // set fonksiyonuyla yapilacak sekilde duzenlenecek
+            HomoObj->ActivityObj->state = (status == ACTIVITY_STATUS_NEXT) ? ACTIVITY_STATE_ACT : ACTIVITY_STATE_PRE;
+    }
+    else if(getActivityState(HomoObj->ActivityObj) == ACTIVITY_STATE_ACT){
+
+            status = HomoObj->ActivityObj->activityFunc(HomoObj->ActivityObj, arg);
+
+            // set fonksiyonuyla yapilacak sekilde duzenlenecek
+            HomoObj->ActivityObj->state = (status == ACTIVITY_STATUS_NEXT) ? ACTIVITY_STATE_POST : ACTIVITY_STATE_ACT;
+    }
+    else if(getActivityState(HomoObj->ActivityObj) == ACTIVITY_STATE_POST){
+
+            status = HomoObj->ActivityObj->postActivityFunc(HomoObj->ActivityObj, arg);
+
+            // set fonksiyonuyla yapilacak sekilde duzenlenecek
+            HomoObj->ActivityObj->state = (status == ACTIVITY_STATUS_NEXT) ? ACTIVITY_STATE_END : ACTIVITY_STATE_POST;
+    }
+    else{
+
+            status = HomoObj->ActivityObj->endActivityFunc(HomoObj->ActivityObj, arg);
+
+            // set fonksiyonuyla yapilacak sekilde duzenlenecek
+            HomoObj->ActivityObj->state = (status == ACTIVITY_STATUS_NEXT) ? ACTIVITY_STATE_PRE : ACTIVITY_STATE_END;
+    }
+}
+
 void setHomoWeight(HomoAbstract_t *HomoObj, weight_t weight){
 
     HomoObj->weight = weight;
@@ -69,6 +104,10 @@ IPictureOfHomo getHomoPicture(HomoAbstract_t *HomoObj){
     return HomoObj->pictureFunc;
 }
 
+void setHomoActivity(HomoAbstract_t *HomoObj, Activity_t *ActivityObj){
+
+    HomoObj->ActivityObj = ActivityObj;
+}
 
 // Protected implementations
 void Callback_mulHeightWeight(void *obj){

@@ -31,6 +31,18 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="ActivityAdapters/Activity_Adapter_Hunting.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ActivityAdapters/Activity_Adapter_Hunting.h" />
+		<Unit filename="ActivityAdapters/Activity_Adapter_Reading.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ActivityAdapters/Activity_Adapter_Reading.h" />
+		<Unit filename="Activity/Activity.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="Activity/Activity.h" />
 		<Unit filename="Callback_HeightWeight/Callback_HeightSapiens.c">
 			<Option compilerVar="CC" />
 		</Unit>

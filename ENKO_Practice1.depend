@@ -1,17 +1,19 @@
 # depslib dependency file v1.0
-1602070281 source:d:\projects\wxwidgets\enko_practice1\homoabstract.c
+1602074865 source:d:\projects\wxwidgets\enko_practice1\homoabstract.c
 	"HomoAbstract.h"
 	<stdio.h>
 
-1602070596 d:\projects\wxwidgets\enko_practice1\homoabstract.h
+1602074476 d:\projects\wxwidgets\enko_practice1\homoabstract.h
 	<stdint.h>
+	"Activity/Activity.h"
 
-1602070423 source:d:\projects\wxwidgets\enko_practice1\main.c
+1602074264 source:d:\projects\wxwidgets\enko_practice1\main.c
 	<stdio.h>
 	<stdlib.h>
 	"HomoSapiens.h"
 	"HomoHabilis.h"
 	"Callback_HeightWeight/Callback_HeightSapiens.h"
+	"ActivityAdapters/Activity_Adapter_Hunting.h"
 
 1602069473 d:\projects\wxwidgets\enko_practice1\homosapiens.h
 	"HomoAbstract.h"
@@ -25,13 +27,29 @@
 	"HomoHabilis.h"
 	<stdio.h>
 
-1601467563 d:\projects\wxwidgets\enko_practice1\homohabilis.h
+1602071100 d:\projects\wxwidgets\enko_practice1\homohabilis.h
 	<stdint.h>
 	"HomoAbstract.h"
 
-1602070246 source:d:\projects\wxwidgets\enko_practice1\callback_heightweight\callback_heightsapiens.c
+1602070632 source:d:\projects\wxwidgets\enko_practice1\callback_heightweight\callback_heightsapiens.c
 	"Callback_HeightSapiens.h"
+	<stdio.h>
 
 1602070022 d:\projects\wxwidgets\enko_practice1\callback_heightweight\callback_heightsapiens.h
 	"../HomoSapiens.h"
+
+1602074182 source:d:\projects\wxwidgets\enko_practice1\activity\activity.c
+	"Activity.h"
+
+1602074186 d:\projects\wxwidgets\enko_practice1\activity\activity.h
+	<stdint.h>
+
+1602072802 source:d:\projects\wxwidgets\enko_practice1\activityadapters\activity_adapter_reading.c
+
+1602074341 source:d:\projects\wxwidgets\enko_practice1\activityadapters\activity_adapter_hunting.c
+	"Activity_Adapter_Hunting.h"
+	<stdio.h>
+
+1602073088 d:\projects\wxwidgets\enko_practice1\activityadapters\activity_adapter_hunting.h
+	"../Activity/Activity.h"
 

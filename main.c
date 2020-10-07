@@ -5,12 +5,17 @@
 
 #include "Callback_HeightWeight/Callback_HeightSapiens.h"
 
+#include "ActivityAdapters/Activity_Adapter_Hunting.h"
+
 HomoSapiens_t MehmetObj;
 HomoSapiens_t JohnObj;
 HomoSapiens_t PtolemyObj;
 HomoSapiens_t FaradayObj;
+HomoSapiens_t LeibnizObj;
 
 HomoHabilis_t Habilis1Obj;
+Activity_t ActivityHabilisObj;
+
 HomoHabilis_t Habilis2Obj;
 
 int main()
@@ -98,7 +103,15 @@ int main()
     getHomoPicture(&Habilis2Obj.HomoBase)();
 
 
+    printf("\n");
+    printf("\n");
+    setActivityAdapterHunting(&ActivityHabilisObj);
+    setHomoActivity(&Habilis1Obj.HomoBase, &ActivityHabilisObj);
 
+    for(uint16_t i = 0; i < 10; i++){
+
+        runHomoActivity(&Habilis1Obj.HomoBase, NULL);
+    }
 
     return 0;
 }

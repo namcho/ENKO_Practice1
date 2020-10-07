@@ -14,6 +14,7 @@
 #define _HOMOABSTRACT_H_
 
 #include <stdint.h>
+#include "Activity/Activity.h"
 
 struct HomoAbstract_st;
 
@@ -51,8 +52,12 @@ typedef struct HomoAbstract_st{
     IPictureOfHomo pictureFunc;
 
     ICallbackHeightWeight callback;
+
+    Activity_t *ActivityObj;
+
 }HomoAbstract_t;
 
+void runHomoActivity(HomoAbstract_t *HomoObj, void *arg);
 
 void setHomoWeight(HomoAbstract_t *HomoObj, weight_t weight);
 
@@ -72,5 +77,6 @@ HomoHeightUnit_e getHomoHeightUnit(HomoAbstract_t *HomoObj);
 
 IPictureOfHomo getHomoPicture(HomoAbstract_t *HomoObj);
 
+void setHomoActivity(HomoAbstract_t *HomoObj, Activity_t *ActivityObj);
 
 #endif // _HOMOABSTRACT_H_
