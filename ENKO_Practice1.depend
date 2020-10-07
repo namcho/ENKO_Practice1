@@ -1,30 +1,37 @@
 # depslib dependency file v1.0
-1601469623 source:d:\projects\wxwidgets\enko_practice1\homoabstract.c
+1602070281 source:d:\projects\wxwidgets\enko_practice1\homoabstract.c
 	"HomoAbstract.h"
 	<stdio.h>
 
-1601470708 d:\projects\wxwidgets\enko_practice1\homoabstract.h
+1602070596 d:\projects\wxwidgets\enko_practice1\homoabstract.h
 	<stdint.h>
 
-1601467603 source:d:\projects\wxwidgets\enko_practice1\main.c
+1602070423 source:d:\projects\wxwidgets\enko_practice1\main.c
 	<stdio.h>
 	<stdlib.h>
 	"HomoSapiens.h"
 	"HomoHabilis.h"
+	"Callback_HeightWeight/Callback_HeightSapiens.h"
 
-1601467573 d:\projects\wxwidgets\enko_practice1\homosapiens.h
+1602069473 d:\projects\wxwidgets\enko_practice1\homosapiens.h
 	"HomoAbstract.h"
 
-1601469453 source:d:\projects\wxwidgets\enko_practice1\homosapiens.c
+1602069949 source:d:\projects\wxwidgets\enko_practice1\homosapiens.c
 	"HomoSapiens.h"
 	<stdio.h>
 	<string.h>
 
-1601469365 source:d:\projects\wxwidgets\enko_practice1\homohabilis.c
+1602070111 source:d:\projects\wxwidgets\enko_practice1\homohabilis.c
 	"HomoHabilis.h"
 	<stdio.h>
 
 1601467563 d:\projects\wxwidgets\enko_practice1\homohabilis.h
 	<stdint.h>
 	"HomoAbstract.h"
+
+1602070246 source:d:\projects\wxwidgets\enko_practice1\callback_heightweight\callback_heightsapiens.c
+	"Callback_HeightSapiens.h"
+
+1602070022 d:\projects\wxwidgets\enko_practice1\callback_heightweight\callback_heightsapiens.h
+	"../HomoSapiens.h"
 

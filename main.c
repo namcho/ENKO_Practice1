@@ -3,6 +3,8 @@
 #include "HomoSapiens.h"
 #include "HomoHabilis.h"
 
+#include "Callback_HeightWeight/Callback_HeightSapiens.h"
+
 HomoSapiens_t MehmetObj;
 HomoSapiens_t JohnObj;
 HomoSapiens_t PtolemyObj;
@@ -35,6 +37,7 @@ int main()
     setHomoSapiensName(&PtolemyObj, "Claudius");
     setHomoSapiensSurname(&PtolemyObj, "Ptolemy");
     setHomoSapiensLanguage(&PtolemyObj, LANGUAGE_ENG);
+    setHomoSapiens_CallbackHeight(&PtolemyObj);
     setHomoHeight(&PtolemyObj.HomoBase, 167);
     setHomoHeightUnit(&PtolemyObj.HomoBase, HEIGHT_UNIT_MMETER);
     setHomoWeight(&PtolemyObj.HomoBase, 65);
@@ -43,6 +46,7 @@ int main()
     setHomoSapiensName(&FaradayObj, "Micheal");
     setHomoSapiensSurname(&FaradayObj, "Faraday");
     setHomoSapiensLanguage(&FaradayObj, LANGUAGE_ENG);
+    setHomoSapiens_CallbackHeight(&FaradayObj);
     setHomoHeight(&FaradayObj.HomoBase, 194);
     setHomoHeightUnit(&FaradayObj.HomoBase, HEIGHT_UNIT_MMETER);
     setHomoWeight(&FaradayObj.HomoBase, 87);
@@ -93,8 +97,8 @@ int main()
     getHomoPicture(&Habilis1Obj.HomoBase)();
     getHomoPicture(&Habilis2Obj.HomoBase)();
 
-    /// Bir kac farkli nesnenin agirligi girildikten sonra, hatali girilmeye karsi onlem almak icin
-    /// Height ve Weight nitelikleri icin basit bir limit kontrolu ekleyelim. AMF5.1 deki ornekler ile kiyaslama yapalim
+
+
 
     return 0;
 }

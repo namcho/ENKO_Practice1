@@ -26,14 +26,13 @@ typedef char *(*ISound)(char *question);
 
 typedef void (*IPictureOfHomo)(void);
 
-typedef void (*ICallbackHeightWeight)(struct HomoAbstract_st *HomoObj);
+typedef void (*ICallbackHeightWeight)( void *obj);
 
 typedef enum{
 
-    HEIGHT_UNIT_CM = 0,
+    HEIGHT_UNIT_MMETER = 0,
+    HEIGHT_UNIT_CM,
     HEIGHT_UNIT_METER,
-    HEIGHT_UNIT_MMETER,
-
 }HomoHeightUnit_e;
 
 typedef float height_t;

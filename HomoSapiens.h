@@ -32,4 +32,6 @@ char *getHomoSapiensName(HomoSapiens_t *PersonObj);
 
 char *getHomoSapiensSurname(HomoSapiens_t *PersonObj);
 
+height_t getHomoSapiensHeight(HomoSapiens_t *PersonObj);
+
 #endif //_HOMOSAPIENS_H_

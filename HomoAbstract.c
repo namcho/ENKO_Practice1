@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 // C++ Style Protected functions
-void Callback_HomoAbstract(HomoAbstract_t *HomoObj);
+void Callback_mulHeightWeight(void *obj);
 
 void setHomoWeight(HomoAbstract_t *HomoObj, weight_t weight){
 
@@ -71,8 +71,9 @@ IPictureOfHomo getHomoPicture(HomoAbstract_t *HomoObj){
 
 
 // Protected implementations
-void Callback_HomoAbstract(HomoAbstract_t *HomoObj){
+void Callback_mulHeightWeight(void *obj){
 
+    HomoAbstract_t *HomoObj = (HomoAbstract_t *)obj;
     float mul;
 
     mul = getHomoHeight(HomoObj) * getHomoWeight(HomoObj);

@@ -3,7 +3,7 @@
 #include <string.h>
 
 // Protected functions from HomoAbstract
-extern void Callback_HomoAbstract(HomoAbstract_t *HomoObj);
+extern void Callback_mulHeightWeight(void *obj);
 
 // Private functions
 static char *LanguageNull(char *question);
@@ -22,7 +22,7 @@ void initHomoSapiens(HomoSapiens_t *PersonObj){
 
     PersonObj->HomoBase.pictureFunc = pictureOfSapiens;
 
-    PersonObj->HomoBase.callback = Callback_HomoAbstract;
+    PersonObj->HomoBase.callback = Callback_mulHeightWeight;
 }
 
 void setHomoSapiensName(HomoSapiens_t *PersonObj, char *name){
@@ -77,6 +77,11 @@ char *getHomoSapiensName(HomoSapiens_t *PersonObj){
 char *getHomoSapiensSurname(HomoSapiens_t *PersonObj){
 
     return &PersonObj->surname[0];
+}
+
+height_t getHomoSapiensHeight(HomoSapiens_t *PersonObj){
+
+    return getHomoHeight(&PersonObj->HomoBase);
 }
 
 // ######################

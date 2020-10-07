@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 // Protected
-extern void Callback_HomoAbstract(HomoAbstract_t *HomoObj);
+extern void Callback_mulHeightWeight(void *obj);
 
 static void pictureOfHabilis();
 
@@ -15,7 +15,7 @@ void initHomoHabilis(HomoHabilis_t *HabilisObj){
     HabilisObj->HomoBase.height = 0;
     HabilisObj->HomoBase.weight = 0;
 
-    HabilisObj->HomoBase.callback = Callback_HomoAbstract;
+    HabilisObj->HomoBase.callback = Callback_mulHeightWeight;
 }
 
 void setHomoHabilisID(HomoHabilis_t *HabilisObj){
