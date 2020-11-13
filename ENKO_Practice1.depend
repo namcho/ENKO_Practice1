@@ -7,13 +7,14 @@
 	<stdint.h>
 	"Activity/Activity.h"
 
-1605273449 source:d:\projects\wxwidgets\enko_practice1\main.c
+1605275902 source:d:\projects\wxwidgets\enko_practice1\main.c
 	<stdio.h>
 	<stdlib.h>
 	"HomoSapiens.h"
 	"HomoHabilis.h"
 	"Callback_HeightWeight/Callback_HeightSapiens.h"
 	"ActivityAdapters/Activity_Adapter_Hunting.h"
+	"ActivityAdapters/Activity_Adapter_Reading.h"
 	"ActivityAdapters/Activity_Adapter_Math.h"
 	"ActivityParameters/ActivityMathArg.h"
 
@@ -40,10 +41,10 @@
 1602070022 d:\projects\wxwidgets\enko_practice1\callback_heightweight\callback_heightsapiens.h
 	"../HomoSapiens.h"
 
-1602074182 source:d:\projects\wxwidgets\enko_practice1\activity\activity.c
+1605276857 source:d:\projects\wxwidgets\enko_practice1\activity\activity.c
 	"Activity.h"
 
-1602074186 d:\projects\wxwidgets\enko_practice1\activity\activity.h
+1605276765 d:\projects\wxwidgets\enko_practice1\activity\activity.h
 	<stdint.h>
 
 1602075449 source:d:\projects\wxwidgets\enko_practice1\activityadapters\activity_adapter_reading.c

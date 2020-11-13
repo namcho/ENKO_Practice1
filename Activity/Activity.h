@@ -50,4 +50,6 @@ typedef struct Activity_st{
 
 ActivityState_e getActivityState(Activity_t *ActivityObj);
 
+void setActivityState(Activity_t *ActivityObj, ActivityState_e state_new);
+
 #endif // _ACTIVITY_H_

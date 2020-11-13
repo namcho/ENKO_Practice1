@@ -18,3 +18,8 @@ ActivityState_e getActivityState(Activity_t *ActivityObj){
 
     return ActivityObj->state;
 }
+
+void setActivityState(Activity_t *ActivityObj, ActivityState_e state_new){
+
+    ActivityObj->state = state_new;
+}

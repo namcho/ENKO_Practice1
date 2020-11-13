@@ -6,7 +6,6 @@
 void Callback_mulHeightWeight(void *obj);
 
 
-
 void runHomoActivity(HomoAbstract_t *HomoObj, void *arg){
 
     ActivityStatus_e status;
@@ -14,29 +13,26 @@ void runHomoActivity(HomoAbstract_t *HomoObj, void *arg){
 
             status = HomoObj->ActivityObj->preActivityFunc(HomoObj->ActivityObj, arg);
 
-            // set fonksiyonuyla yapilacak sekilde duzenlenecek
-            HomoObj->ActivityObj->state = (status == ACTIVITY_STATUS_NEXT) ? ACTIVITY_STATE_ACT : ACTIVITY_STATE_PRE;
+            setActivityState(HomoObj->ActivityObj, (status == ACTIVITY_STATUS_NEXT) ? ACTIVITY_STATE_ACT : ACTIVITY_STATE_PRE);
     }
     else if(getActivityState(HomoObj->ActivityObj) == ACTIVITY_STATE_ACT){
 
             status = HomoObj->ActivityObj->activityFunc(HomoObj->ActivityObj, arg);
 
-            // set fonksiyonuyla yapilacak sekilde duzenlenecek
-            HomoObj->ActivityObj->state = (status == ACTIVITY_STATUS_NEXT) ? ACTIVITY_STATE_POST : ACTIVITY_STATE_ACT;
+            setActivityState(HomoObj->ActivityObj, (status == ACTIVITY_STATUS_NEXT) ? ACTIVITY_STATE_POST : ACTIVITY_STATE_ACT);
     }
     else if(getActivityState(HomoObj->ActivityObj) == ACTIVITY_STATE_POST){
 
             status = HomoObj->ActivityObj->postActivityFunc(HomoObj->ActivityObj, arg);
 
-            // set fonksiyonuyla yapilacak sekilde duzenlenecek
-            HomoObj->ActivityObj->state = (status == ACTIVITY_STATUS_NEXT) ? ACTIVITY_STATE_END : ACTIVITY_STATE_POST;
+            setActivityState(HomoObj->ActivityObj, (status == ACTIVITY_STATUS_NEXT) ? ACTIVITY_STATE_END : ACTIVITY_STATE_POST);
     }
     else{
 
             status = HomoObj->ActivityObj->endActivityFunc(HomoObj->ActivityObj, arg);
 
             // set fonksiyonuyla yapilacak sekilde duzenlenecek
-            HomoObj->ActivityObj->state = (status == ACTIVITY_STATUS_NEXT) ? ACTIVITY_STATE_PRE : ACTIVITY_STATE_END;
+            setActivityState(HomoObj->ActivityObj, (status == ACTIVITY_STATUS_NEXT) ? ACTIVITY_STATE_PRE : ACTIVITY_STATE_END);
     }
 }
 
