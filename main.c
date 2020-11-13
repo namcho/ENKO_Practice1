@@ -6,14 +6,17 @@
 #include "Callback_HeightWeight/Callback_HeightSapiens.h"
 
 #include "ActivityAdapters/Activity_Adapter_Hunting.h"
-
+#include "ActivityAdapters/Activity_Adapter_Reading.h"
 #include "ActivityAdapters/Activity_Adapter_Math.h"
 #include "ActivityParameters/ActivityMathArg.h"
 
 HomoSapiens_t MehmetObj;
 HomoSapiens_t JohnObj;
 HomoSapiens_t PtolemyObj;
+
 HomoSapiens_t FaradayObj;
+Activity_t ActivityFaradayObj;
+ActivityMathArg_t ActivityMathSubArgObj;
 
 HomoSapiens_t LeibnizObj;
 Activity_t ActivityLeibnizObj;
@@ -140,15 +143,18 @@ int main()
 
     setActivityAdapterMath(&ActivityThalesObj);
     setHomoActivity(&ThalesObj.HomoBase, &ActivityThalesObj);
-    setActivityMathArg(&ActivityMathArgObj, ACTIVITY_MATH_OPER_SUM, 5.0, 12.0);
+    setActivityMathArg(&ActivityMathSumArgObj, ACTIVITY_MATH_OPER_SUM, 5.0, 12.0);
 
-
+    setActivityAdapterMath(&ActivityFaradayObj);
+    setHomoActivity(&FaradayObj.HomoBase, &ActivityFaradayObj);
+    setActivityMathArg(&ActivityMathSubArgObj, ACTIVITY_MATH_OPER_SUB, 27.0, 7.0);
 
     for(uint16_t i = 0; i < 10; i++){
 
         runHomoActivity(&Habilis1Obj.HomoBase, NULL);
         runHomoActivity(&LeibnizObj.HomoBase, NULL);
-        runHomoActivity(&ThalesObj.HomoBase, &ActivityMathArgObj);
+        runHomoActivity(&ThalesObj.HomoBase, &ActivityMathSumArgObj);
+        runHomoActivity(&FaradayObj.HomoBase, &ActivityMathSubArgObj);
     }
 
     return 0;

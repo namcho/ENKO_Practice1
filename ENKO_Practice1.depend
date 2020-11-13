@@ -65,9 +65,10 @@
 
 1605274207 d:\projects\wxwidgets\enko_practice1\activityparameters\activitymatharg.h
 
-1605274226 source:d:\projects\wxwidgets\enko_practice1\activityadapters\activity_adapter_math.c
+1605275099 source:d:\projects\wxwidgets\enko_practice1\activityadapters\activity_adapter_math.c
 	"Activity_Adapter_Math.h"
 	"../ActivityParameters/ActivityMathArg.h"
+	<stdio.h>
 
 1605274233 source:d:\projects\wxwidgets\enko_practice1\activityparameters\activitymatharg.c
 	"ActivityMathArg.h"
