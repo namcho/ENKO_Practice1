@@ -20,7 +20,7 @@ Activity_t ActivityLeibnizObj;
 
 HomoSapiens_t ThalesObj;
 Activity_t ActivityThalesObj;
-ActivityMathArg_t ActivityMathArgObj;
+ActivityMathArg_t ActivityMathSumArgObj;
 
 HomoHabilis_t Habilis1Obj;
 Activity_t ActivityHabilisObj;
@@ -138,10 +138,17 @@ int main()
     setActivityAdapterReading(&ActivityLeibnizObj);
     setHomoActivity(&LeibnizObj.HomoBase, &ActivityLeibnizObj);
 
+    setActivityAdapterMath(&ActivityThalesObj);
+    setHomoActivity(&ThalesObj.HomoBase, &ActivityThalesObj);
+    setActivityMathArg(&ActivityMathArgObj, ACTIVITY_MATH_OPER_SUM, 5.0, 12.0);
+
+
+
     for(uint16_t i = 0; i < 10; i++){
 
         runHomoActivity(&Habilis1Obj.HomoBase, NULL);
         runHomoActivity(&LeibnizObj.HomoBase, NULL);
+        runHomoActivity(&ThalesObj.HomoBase, &ActivityMathArgObj);
     }
 
     return 0;
