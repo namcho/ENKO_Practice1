@@ -15,6 +15,9 @@ HomoSapiens_t FaradayObj;
 HomoSapiens_t LeibnizObj;
 Activity_t ActivityLeibnizObj;
 
+HomoSapiens_t ThalesObj;
+Activity_t ActivityThalesObj;
+
 HomoHabilis_t Habilis1Obj;
 Activity_t ActivityHabilisObj;
 
@@ -118,6 +121,8 @@ int main()
     setHomoHeight(&LeibnizObj.HomoBase, 194);
     setHomoHeightUnit(&LeibnizObj.HomoBase, HEIGHT_UNIT_MMETER);
     setHomoWeight(&LeibnizObj.HomoBase, 87);
+
+
 
     setActivityAdapterReading(&ActivityLeibnizObj);
     setHomoActivity(&LeibnizObj.HomoBase, &ActivityLeibnizObj);

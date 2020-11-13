@@ -3,7 +3,7 @@
 	"HomoAbstract.h"
 	<stdio.h>
 
-1602074476 d:\projects\wxwidgets\enko_practice1\homoabstract.h
+1603260929 d:\projects\wxwidgets\enko_practice1\homoabstract.h
 	<stdint.h>
 	"Activity/Activity.h"
 
@@ -44,12 +44,17 @@
 1602074186 d:\projects\wxwidgets\enko_practice1\activity\activity.h
 	<stdint.h>
 
-1602072802 source:d:\projects\wxwidgets\enko_practice1\activityadapters\activity_adapter_reading.c
+1602075449 source:d:\projects\wxwidgets\enko_practice1\activityadapters\activity_adapter_reading.c
+	"Activity_Adapter_Reading.h"
+	<stdio.h>
 
 1602074341 source:d:\projects\wxwidgets\enko_practice1\activityadapters\activity_adapter_hunting.c
 	"Activity_Adapter_Hunting.h"
 	<stdio.h>
 
 1602073088 d:\projects\wxwidgets\enko_practice1\activityadapters\activity_adapter_hunting.h
+	"../Activity/Activity.h"
+
+1602075831 d:\projects\wxwidgets\enko_practice1\activityadapters\activity_adapter_reading.h
 	"../Activity/Activity.h"
 
