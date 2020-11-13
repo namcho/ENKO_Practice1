@@ -47,7 +47,7 @@ ActivityStatus_e _ActivityMath(Activity_t *ActivityObj, void *obj){
     retval = ACTIVITY_STATUS_ONGOING;
 
     ActivityObj->ticker_act++;
-    printf("islemi yapmaya calisiyorum, %d", ActivityObj->ticker_act);
+    printf("islemi yapmaya calisiyorum, %d\n", ActivityObj->ticker_act);
 
     if(ActivityObj->ticker_act >= 4){
 
@@ -69,8 +69,16 @@ ActivityStatus_e _ActivityMath(Activity_t *ActivityObj, void *obj){
 
 ActivityStatus_e _PostActivityMath(Activity_t *ActivityObj, void *obj){
 
+        ActivityMathArg_t *argObj = (ActivityMathArg_t *)obj;
+
+        printf("Sonuc = %.2f\n", argObj->y);
+
+        return ACTIVITY_STATUS_NEXT;
 }
 
 ActivityStatus_e _EndActivityMath(Activity_t *ActivityObj, void *obj){
 
+    printf("Activith Math END\n");
+
+    return ACTIVITY_STATUS_ONGOING;
 }
