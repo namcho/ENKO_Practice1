@@ -7,6 +7,9 @@
 
 #include "ActivityAdapters/Activity_Adapter_Hunting.h"
 
+#include "ActivityAdapters/Activity_Adapter_Math.h"
+#include "ActivityParameters/ActivityMathArg.h"
+
 HomoSapiens_t MehmetObj;
 HomoSapiens_t JohnObj;
 HomoSapiens_t PtolemyObj;
@@ -17,6 +20,7 @@ Activity_t ActivityLeibnizObj;
 
 HomoSapiens_t ThalesObj;
 Activity_t ActivityThalesObj;
+ActivityMathArg_t ActivityMathArgObj;
 
 HomoHabilis_t Habilis1Obj;
 Activity_t ActivityHabilisObj;
@@ -60,6 +64,24 @@ int main()
     setHomoHeight(&FaradayObj.HomoBase, 194);
     setHomoHeightUnit(&FaradayObj.HomoBase, HEIGHT_UNIT_MMETER);
     setHomoWeight(&FaradayObj.HomoBase, 87);
+
+    initHomoSapiens(&LeibnizObj);
+    setHomoSapiensName(&LeibnizObj, "GottFried");
+    setHomoSapiensSurname(&FaradayObj, "Leibniz");
+    setHomoSapiensLanguage(&LeibnizObj, LANGUAGE_ENG);
+    setHomoSapiens_CallbackHeight(&LeibnizObj);
+    setHomoHeight(&LeibnizObj.HomoBase, 194);
+    setHomoHeightUnit(&LeibnizObj.HomoBase, HEIGHT_UNIT_MMETER);
+    setHomoWeight(&LeibnizObj.HomoBase, 87);
+
+    initHomoSapiens(&ThalesObj);
+    setHomoSapiensName(&ThalesObj, "Thales");
+    setHomoSapiensSurname(&ThalesObj, "Milestos");
+    setHomoSapiensLanguage(&ThalesObj, LANGUAGE_ENG);
+    setHomoSapiens_CallbackHeight(&ThalesObj);
+    setHomoHeight(&ThalesObj.HomoBase, 182);
+    setHomoHeightUnit(&ThalesObj.HomoBase, HEIGHT_UNIT_METER);
+    setHomoWeight(&ThalesObj.HomoBase, 78);
 
     initHomoHabilis(&Habilis1Obj);
     setHomoHeight(&Habilis1Obj.HomoBase, 130);
@@ -112,17 +134,6 @@ int main()
     printf("\n");
     setActivityAdapterHunting(&ActivityHabilisObj);
     setHomoActivity(&Habilis1Obj.HomoBase, &ActivityHabilisObj);
-
-    initHomoSapiens(&LeibnizObj);
-    setHomoSapiensName(&LeibnizObj, "GottFried");
-    setHomoSapiensSurname(&FaradayObj, "Leibniz");
-    setHomoSapiensLanguage(&LeibnizObj, LANGUAGE_ENG);
-    setHomoSapiens_CallbackHeight(&LeibnizObj);
-    setHomoHeight(&LeibnizObj.HomoBase, 194);
-    setHomoHeightUnit(&LeibnizObj.HomoBase, HEIGHT_UNIT_MMETER);
-    setHomoWeight(&LeibnizObj.HomoBase, 87);
-
-
 
     setActivityAdapterReading(&ActivityLeibnizObj);
     setHomoActivity(&LeibnizObj.HomoBase, &ActivityLeibnizObj);

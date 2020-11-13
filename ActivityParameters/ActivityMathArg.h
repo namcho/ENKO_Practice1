@@ -16,3 +16,12 @@ typedef struct{
     float y;             // Yapilacak olan isleme gore sonucu barindirir
 
 }ActivityMathArg_t;
+
+
+void setActivityMathArg(ActivityMathArg_t *ActivityMathArgObj,
+                        ActivityMathOperation_e operation,
+                        float x1,
+                        float x2,
+                        );
+
+float getActivityMathResult(ActivityMathArg_t *ActivityMathArgObj);
