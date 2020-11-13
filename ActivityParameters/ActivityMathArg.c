@@ -6,7 +6,7 @@
 void setActivityMathArg(ActivityMathArg_t *ActivityMathArgObj,
                         ActivityMathOperation_e operation,
                         float x1,
-                        float x2,){
+                        float x2){
 
     ActivityMathArgObj->operation = operation;
     ActivityMathArgObj->x1 = x1;

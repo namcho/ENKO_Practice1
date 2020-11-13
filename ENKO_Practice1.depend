@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1602074865 source:d:\projects\wxwidgets\enko_practice1\homoabstract.c
+1603260929 source:d:\projects\wxwidgets\enko_practice1\homoabstract.c
 	"HomoAbstract.h"
 	<stdio.h>
 
@@ -7,18 +7,20 @@
 	<stdint.h>
 	"Activity/Activity.h"
 
-1602075817 source:d:\projects\wxwidgets\enko_practice1\main.c
+1605273449 source:d:\projects\wxwidgets\enko_practice1\main.c
 	<stdio.h>
 	<stdlib.h>
 	"HomoSapiens.h"
 	"HomoHabilis.h"
 	"Callback_HeightWeight/Callback_HeightSapiens.h"
 	"ActivityAdapters/Activity_Adapter_Hunting.h"
+	"ActivityAdapters/Activity_Adapter_Math.h"
+	"ActivityParameters/ActivityMathArg.h"
 
 1602069473 d:\projects\wxwidgets\enko_practice1\homosapiens.h
 	"HomoAbstract.h"
 
-1602069949 source:d:\projects\wxwidgets\enko_practice1\homosapiens.c
+1603260929 source:d:\projects\wxwidgets\enko_practice1\homosapiens.c
 	"HomoSapiens.h"
 	<stdio.h>
 	<string.h>
@@ -57,4 +59,16 @@
 
 1602075831 d:\projects\wxwidgets\enko_practice1\activityadapters\activity_adapter_reading.h
 	"../Activity/Activity.h"
+
+1605272414 d:\projects\wxwidgets\enko_practice1\activityadapters\activity_adapter_math.h
+	"../Activity/Activity.h"
+
+1605274207 d:\projects\wxwidgets\enko_practice1\activityparameters\activitymatharg.h
+
+1605274226 source:d:\projects\wxwidgets\enko_practice1\activityadapters\activity_adapter_math.c
+	"Activity_Adapter_Math.h"
+	"../ActivityParameters/ActivityMathArg.h"
+
+1605274233 source:d:\projects\wxwidgets\enko_practice1\activityparameters\activitymatharg.c
+	"ActivityMathArg.h"
 

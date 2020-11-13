@@ -21,7 +21,7 @@ typedef struct{
 void setActivityMathArg(ActivityMathArg_t *ActivityMathArgObj,
                         ActivityMathOperation_e operation,
                         float x1,
-                        float x2,
+                        float x2
                         );
 
 float getActivityMathResult(ActivityMathArg_t *ActivityMathArgObj);

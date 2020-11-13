@@ -1,6 +1,7 @@
 
 #include "Activity_Adapter_Math.h"
 #include "../ActivityParameters/ActivityMathArg.h"
+#include <stdio.h>
 
 /// Private reading interface functions
 static ActivityStatus_e _PreActivityMath(Activity_t *ActivityObj, void *obj);
@@ -20,7 +21,7 @@ void setActivityAdapterMath(Activity_t *ActivityObj){
 
 ActivityStatus_e _PreActivityMath(Activity_t *ActivityObj, void *obj){
 
-    ActivityMathArgObj *argObj = (ActivityMathArg_t *)obj;
+    ActivityMathArg_t *argObj = (ActivityMathArg_t *)obj;
 
     printf("Soruyu anlamaya calisiyorum.\n");
 
@@ -33,7 +34,7 @@ ActivityStatus_e _PreActivityMath(Activity_t *ActivityObj, void *obj){
          printf("Cikarma islemi yapilacak\n");
     }
 
-    print("x1 = %.2f, x2 = %.2f\n", argObj->x1, argObj->x2);
+    printf("x1 = %.2f, x2 = %.2f\n", argObj->x1, argObj->x2);
 
     return ACTIVITY_STATUS_NEXT;
 }
