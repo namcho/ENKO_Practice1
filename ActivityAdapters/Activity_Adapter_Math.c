@@ -41,6 +41,30 @@ ActivityStatus_e _PreActivityMath(Activity_t *ActivityObj, void *obj){
 
 ActivityStatus_e _ActivityMath(Activity_t *ActivityObj, void *obj){
 
+    ActivityStatus_e retval;
+    ActivityMathArg_t *argObj = (ActivityMathArg_t *)obj;
+
+    retval = ACTIVITY_STATUS_ONGOING;
+
+    ActivityObj->ticker_act++;
+    printf("islemi yapmaya calisiyorum, %d", ActivityObj->ticker_act);
+
+    if(ActivityObj->ticker_act >= 4){
+
+        if(argObj->operation == ACTIVITY_MATH_OPER_SUM){
+
+            argObj->y = argObj->x1 + argObj->x2;
+        }
+        else if(argObj->operation == ACTIVITY_MATH_OPER_SUB){
+
+            argObj->y = argObj->x1 - argObj->x2;
+        }
+
+        ActivityObj->ticker_act = 0;
+        retval = ACTIVITY_STATUS_NEXT;
+    }
+
+    return retval;
 }
 
 ActivityStatus_e _PostActivityMath(Activity_t *ActivityObj, void *obj){
