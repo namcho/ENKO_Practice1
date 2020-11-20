@@ -25,6 +25,8 @@ typedef ActivityStatus_e (*IActivity)(struct Activity_st *ActivityObj, void *obj
 typedef  ActivityStatus_e (*IPostActivity)(struct Activity_st *ActivityObj, void *obj);
 typedef ActivityStatus_e (*IEndActivity)(struct Activity_st *ActivityObj, void *obj);
 
+typedef ActivityStatus_e (*ActivityFunctionsArray)(struct Activity_st *ActivityObj, void *obj);
+
 typedef struct Activity_st{
 
     ActivityState_e state;
@@ -39,6 +41,8 @@ typedef struct Activity_st{
     IPostActivity postActivityFunc;
     IEndActivity endActivityFunc;
 
+    ActivityFunctionsArray activityFuncArray[4];
+
 }Activity_t;
 
 
@@ -52,4 +56,5 @@ ActivityState_e getActivityState(Activity_t *ActivityObj);
 
 void setActivityState(Activity_t *ActivityObj, ActivityState_e state_new);
 
+void setActivityFunctionsToArray(Activity_t *ActivityObj);
 #endif // _ACTIVITY_H_

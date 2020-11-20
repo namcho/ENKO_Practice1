@@ -35,10 +35,18 @@
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="ActivityAdapters/Activity_Adapter_Hunting.h" />
+		<Unit filename="ActivityAdapters/Activity_Adapter_Math.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ActivityAdapters/Activity_Adapter_Math.h" />
 		<Unit filename="ActivityAdapters/Activity_Adapter_Reading.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="ActivityAdapters/Activity_Adapter_Reading.h" />
+		<Unit filename="ActivityParameters/ActivityMathArg.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ActivityParameters/ActivityMathArg.h" />
 		<Unit filename="Activity/Activity.c">
 			<Option compilerVar="CC" />
 		</Unit>
@@ -65,6 +73,9 @@
 		</Unit>
 		<Extensions>
 			<lib_finder disable_auto="1" />
+			<code_completion />
+			<envvars />
+			<debugger />
 		</Extensions>
 	</Project>
 </CodeBlocks_project_file>
