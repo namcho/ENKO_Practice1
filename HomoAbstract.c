@@ -8,6 +8,14 @@ void Callback_mulHeightWeight(void *obj);
 
 void runHomoActivity(HomoAbstract_t *HomoObj, void *arg){
 
+    /*
+        ACIKLAMA ONEMLI!
+
+        Yorum yapilmis olan asagidaki if-else yapisi yerine
+        activityFuncArray kullanilarak arayuz fonksiyonlarina dogrudan erisim saglanmistir.
+        Bu tarz bir yaklasim ozellikle kisa periyotlar ile cagrilan fonksiyonlarda onemli performans artisi saglayabilir.
+    */
+
 //    ActivityStatus_e status;
 //    if(getActivityState(HomoObj->ActivityObj) == ACTIVITY_STATE_PRE){
 //
