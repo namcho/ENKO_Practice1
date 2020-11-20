@@ -32,6 +32,7 @@ ActivityStatus_e _PreActivityReading(Activity_t *ActivityObj, void *obj){
 
     printf("Kitap ariyorum\n");
 
+    setActivityState(ActivityObj, ACTIVITY_STATE_ACT);
     return ACTIVITY_STATUS_NEXT;
 }
 
@@ -44,6 +45,8 @@ ActivityStatus_e _ActivityReading(Activity_t *ActivityObj, void *obj){
     if(ActivityObj->ticker_act >= 5){
 
         ActivityObj->ticker_act = 0;
+
+        setActivityState(ActivityObj, ACTIVITY_STATE_POST);
         return ACTIVITY_STATUS_NEXT;
     }
     else{
@@ -56,6 +59,7 @@ ActivityStatus_e _PostActivityReading(Activity_t *ActivityObj, void *obj){
 
     printf("Kitabi rafa kaldirdim\n");
 
+    setActivityState(ActivityObj, ACTIVITY_STATE_END);
     return ACTIVITY_STATUS_NEXT;
 }
 

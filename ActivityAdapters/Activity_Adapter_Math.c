@@ -38,6 +38,7 @@ ActivityStatus_e _PreActivityMath(Activity_t *ActivityObj, void *obj){
 
     printf("x1 = %.2f, x2 = %.2f\n", argObj->x1, argObj->x2);
 
+    setActivityState(ActivityObj, ACTIVITY_STATE_ACT);
     return ACTIVITY_STATUS_NEXT;
 }
 
@@ -63,6 +64,8 @@ ActivityStatus_e _ActivityMath(Activity_t *ActivityObj, void *obj){
         }
 
         ActivityObj->ticker_act = 0;
+
+        setActivityState(ActivityObj, ACTIVITY_STATE_POST);
         retval = ACTIVITY_STATUS_NEXT;
     }
 
@@ -75,6 +78,7 @@ ActivityStatus_e _PostActivityMath(Activity_t *ActivityObj, void *obj){
 
         printf("Sonuc = %.2f\n", argObj->y);
 
+        setActivityState(ActivityObj, ACTIVITY_STATE_END);
         return ACTIVITY_STATUS_NEXT;
 }
 

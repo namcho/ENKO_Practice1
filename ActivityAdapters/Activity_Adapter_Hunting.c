@@ -35,6 +35,8 @@ ActivityStatus_e _PreActivityHunting(Activity_t *ActivityObj, void *obj){
     if(ActivityObj->ticker_pre >= 1){
 
             ActivityObj->ticker_pre = 0;
+
+            setActivityState(ActivityObj, ACTIVITY_STATE_ACT);
             return ACTIVITY_STATUS_NEXT;
     }
     else{
@@ -54,6 +56,8 @@ ActivityStatus_e _ActivityHunting(Activity_t *ActivityObj, void *obj){
     if(ActivityObj->ticker_act >= 3){
 
         ActivityObj->ticker_act = 0;
+
+        setActivityState(ActivityObj, ACTIVITY_STATE_POST);
         return ACTIVITY_STATUS_NEXT;
     }
     else{
@@ -73,6 +77,8 @@ ActivityStatus_e _PostActivityHunting(Activity_t *ActivityObj, void *obj){
     if(ActivityObj->ticker_post >= 5){
 
         ActivityObj->ticker_post = 0;
+
+        setActivityState(ActivityObj, ACTIVITY_STATE_END);
         return ACTIVITY_STATUS_NEXT;
     }
     else{

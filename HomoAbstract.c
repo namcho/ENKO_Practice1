@@ -8,32 +8,34 @@ void Callback_mulHeightWeight(void *obj);
 
 void runHomoActivity(HomoAbstract_t *HomoObj, void *arg){
 
-    ActivityStatus_e status;
-    if(getActivityState(HomoObj->ActivityObj) == ACTIVITY_STATE_PRE){
+//    ActivityStatus_e status;
+//    if(getActivityState(HomoObj->ActivityObj) == ACTIVITY_STATE_PRE){
+//
+//            status = HomoObj->ActivityObj->preActivityFunc(HomoObj->ActivityObj, arg);
+//
+//            setActivityState(HomoObj->ActivityObj, (status == ACTIVITY_STATUS_NEXT) ? ACTIVITY_STATE_ACT : ACTIVITY_STATE_PRE);
+//    }
+//    else if(getActivityState(HomoObj->ActivityObj) == ACTIVITY_STATE_ACT){
+//
+//            status = HomoObj->ActivityObj->activityFunc(HomoObj->ActivityObj, arg);
+//
+//            setActivityState(HomoObj->ActivityObj, (status == ACTIVITY_STATUS_NEXT) ? ACTIVITY_STATE_POST : ACTIVITY_STATE_ACT);
+//    }
+//    else if(getActivityState(HomoObj->ActivityObj) == ACTIVITY_STATE_POST){
+//
+//            status = HomoObj->ActivityObj->postActivityFunc(HomoObj->ActivityObj, arg);
+//
+//            setActivityState(HomoObj->ActivityObj, (status == ACTIVITY_STATUS_NEXT) ? ACTIVITY_STATE_END : ACTIVITY_STATE_POST);
+//    }
+//    else{
+//
+//            status = HomoObj->ActivityObj->endActivityFunc(HomoObj->ActivityObj, arg);
+//
+//            // set fonksiyonuyla yapilacak sekilde duzenlenecek
+//            setActivityState(HomoObj->ActivityObj, (status == ACTIVITY_STATUS_NEXT) ? ACTIVITY_STATE_PRE : ACTIVITY_STATE_END);
+//    }
 
-            status = HomoObj->ActivityObj->preActivityFunc(HomoObj->ActivityObj, arg);
-
-            setActivityState(HomoObj->ActivityObj, (status == ACTIVITY_STATUS_NEXT) ? ACTIVITY_STATE_ACT : ACTIVITY_STATE_PRE);
-    }
-    else if(getActivityState(HomoObj->ActivityObj) == ACTIVITY_STATE_ACT){
-
-            status = HomoObj->ActivityObj->activityFunc(HomoObj->ActivityObj, arg);
-
-            setActivityState(HomoObj->ActivityObj, (status == ACTIVITY_STATUS_NEXT) ? ACTIVITY_STATE_POST : ACTIVITY_STATE_ACT);
-    }
-    else if(getActivityState(HomoObj->ActivityObj) == ACTIVITY_STATE_POST){
-
-            status = HomoObj->ActivityObj->postActivityFunc(HomoObj->ActivityObj, arg);
-
-            setActivityState(HomoObj->ActivityObj, (status == ACTIVITY_STATUS_NEXT) ? ACTIVITY_STATE_END : ACTIVITY_STATE_POST);
-    }
-    else{
-
-            status = HomoObj->ActivityObj->endActivityFunc(HomoObj->ActivityObj, arg);
-
-            // set fonksiyonuyla yapilacak sekilde duzenlenecek
-            setActivityState(HomoObj->ActivityObj, (status == ACTIVITY_STATUS_NEXT) ? ACTIVITY_STATE_PRE : ACTIVITY_STATE_END);
-    }
+    HomoObj->ActivityObj->activityFuncArray[getActivityState(HomoObj->ActivityObj)](HomoObj->ActivityObj, arg);
 }
 
 void setHomoWeight(HomoAbstract_t *HomoObj, weight_t weight){
