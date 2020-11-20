@@ -17,6 +17,8 @@ void setActivityAdapterMath(Activity_t *ActivityObj){
     ActivityObj->activityFunc = _ActivityMath;
     ActivityObj->postActivityFunc = _PostActivityMath;
     ActivityObj->endActivityFunc = _EndActivityMath;
+
+     setActivityFunctionsToArray(ActivityObj);
 }
 
 ActivityStatus_e _PreActivityMath(Activity_t *ActivityObj, void *obj){

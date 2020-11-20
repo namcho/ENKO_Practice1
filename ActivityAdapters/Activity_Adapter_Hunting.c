@@ -22,6 +22,8 @@ void setActivityAdapterHunting(Activity_t *ActivityObj){
     ActivityObj->activityFunc = _ActivityHunting;
     ActivityObj->postActivityFunc = _PostActivityHunting;
     ActivityObj->endActivityFunc = _EndActivityHunting;
+
+    setActivityFunctionsToArray(ActivityObj);
 }
 
 

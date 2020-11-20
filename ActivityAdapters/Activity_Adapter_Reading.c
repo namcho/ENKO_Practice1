@@ -23,6 +23,8 @@ void setActivityAdapterReading(Activity_t *ActivityObj){
     ActivityObj->activityFunc = _ActivityReading;
     ActivityObj->postActivityFunc = _PostActivityReading;
     ActivityObj->endActivityFunc = _EndActivityReading;
+
+     setActivityFunctionsToArray(ActivityObj);
 }
 
 
