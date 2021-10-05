@@ -152,9 +152,13 @@ int main()
     for(uint16_t i = 0; i < 10; i++){
 
         runHomoActivity(&Habilis1Obj.HomoBase, NULL);
+        printf("\n");
         runHomoActivity(&LeibnizObj.HomoBase, NULL);
+        printf("\n");
         runHomoActivity(&ThalesObj.HomoBase, &ActivityMathSumArgObj);
+        printf("\n");
         runHomoActivity(&FaradayObj.HomoBase, &ActivityMathSubArgObj);
+        printf("\n");
     }
 
     return 0;
